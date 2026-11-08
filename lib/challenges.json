@@ -1,0 +1,2984 @@
+[
+  {
+    "id": "challenge-001",
+    "category": "Numbers",
+    "title": "Repair the checkout total",
+    "prompt": "Return the sum of the numbers in input. Empty carts total 0.",
+    "solution": "function solve(input) { return input.reduce((a,b)=>a+b,0); }",
+    "tests": [
+      {
+        "input": [10, 20, 5],
+        "expected": 35
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [-4, 4],
+        "expected": 0
+      }
+    ],
+    "hint": "Start reduce with 0.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Repair the checkout total\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.reduce((a,b)=>a+b);\n}"
+  },
+  {
+    "id": "challenge-002",
+    "category": "Numbers",
+    "title": "Average response time",
+    "prompt": "Return the mean of input, or 0 when empty.",
+    "solution": "function solve(input) { return input.length ? input.reduce((a,b)=>a+b,0)/input.length : 0; }",
+    "tests": [
+      {
+        "input": [2, 4, 6],
+        "expected": 4
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [9],
+        "expected": 9
+      }
+    ],
+    "hint": "Divide the total by the number of samples.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Average response time\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.reduce((a,b)=>a+b,0);\n}"
+  },
+  {
+    "id": "challenge-003",
+    "category": "Numbers",
+    "title": "Largest sensor reading",
+    "prompt": "Return the largest number, or null for an empty array.",
+    "solution": "function solve(input) { return input.length ? Math.max(...input) : null; }",
+    "tests": [
+      {
+        "input": [2, 9, -1],
+        "expected": 9
+      },
+      {
+        "input": [],
+        "expected": null
+      },
+      {
+        "input": [-3, -8],
+        "expected": -3
+      }
+    ],
+    "hint": "Handle empty input before Math.max.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Largest sensor reading\n// Review and repair this implementation.\nfunction solve(input) {\n  return Math.max(...input);\n}"
+  },
+  {
+    "id": "challenge-004",
+    "category": "Numbers",
+    "title": "Smallest price",
+    "prompt": "Return the smallest number, or null when empty.",
+    "solution": "function solve(input) { return input.length ? Math.min(...input) : null; }",
+    "tests": [
+      {
+        "input": [5, 1, 9],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": null
+      },
+      {
+        "input": [-3, 0],
+        "expected": -3
+      }
+    ],
+    "hint": "Math.min accepts separate arguments.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Smallest price\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-005",
+    "category": "Numbers",
+    "title": "Clamp the volume",
+    "prompt": "Input is [value,min,max]. Clamp value to the inclusive bounds.",
+    "solution": "function solve(input) { return Math.min(input[2],Math.max(input[1],input[0])); }",
+    "tests": [
+      {
+        "input": [120, 0, 100],
+        "expected": 100
+      },
+      {
+        "input": [-1, 0, 100],
+        "expected": 0
+      },
+      {
+        "input": [50, 0, 100],
+        "expected": 50
+      }
+    ],
+    "hint": "Combine Math.min and Math.max.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Clamp the volume\n// Review and repair this implementation.\nfunction solve(input) {\n  return Math.max(input[2],Math.min(input[1],input[0]));\n}"
+  },
+  {
+    "id": "challenge-006",
+    "category": "Numbers",
+    "title": "Calculate a discount",
+    "prompt": "Input is [price,percentage]. Return discounted price rounded to two decimals.",
+    "solution": "function solve(input) { return Math.round(input[0]*(1-input[1]/100)*100)/100; }",
+    "tests": [
+      {
+        "input": [100, 20],
+        "expected": 80
+      },
+      {
+        "input": [99, 10],
+        "expected": 89.1
+      },
+      {
+        "input": [25, 0],
+        "expected": 25
+      }
+    ],
+    "hint": "Multiply by the remaining percentage.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Calculate a discount\n// Review and repair this implementation.\nfunction solve(input) {\n  return input[0] * input[1] / 100;\n}"
+  },
+  {
+    "id": "challenge-007",
+    "category": "Numbers",
+    "title": "Factorial for combinations",
+    "prompt": "Return n factorial for nonnegative integer input; 0 factorial is 1.",
+    "solution": "function solve(input) { let n=1; for(let i=2;i<=input;i++)n*=i; return n;  }",
+    "tests": [
+      {
+        "input": 0,
+        "expected": 1
+      },
+      {
+        "input": 5,
+        "expected": 120
+      },
+      {
+        "input": 1,
+        "expected": 1
+      }
+    ],
+    "hint": "Use a product initialized to 1.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Factorial for combinations\n// Review and repair this implementation.\nfunction solve(input) {\n  let n=0;for(let i=1;i<=input;i++)n*=i;return n;\n}"
+  },
+  {
+    "id": "challenge-008",
+    "category": "Numbers",
+    "title": "Prime checker",
+    "prompt": "Return whether integer input is prime.",
+    "solution": "function solve(input) { if(input<2)return false; for(let i=2;i*i<=input;i++)if(input%i===0)return false; return true; }",
+    "tests": [
+      {
+        "input": 2,
+        "expected": true
+      },
+      {
+        "input": 9,
+        "expected": false
+      },
+      {
+        "input": 1,
+        "expected": false
+      },
+      {
+        "input": 17,
+        "expected": true
+      }
+    ],
+    "hint": "Check divisors up to the square root.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Prime checker\n// Review and repair this implementation.\nfunction solve(input) {\n  return input>1 && input%2!==0;\n}"
+  },
+  {
+    "id": "challenge-009",
+    "category": "Numbers",
+    "title": "Greatest common divisor",
+    "prompt": "Input is two nonnegative integers. Return their GCD.",
+    "solution": "function solve(input) { let [a,b]=input; while(b){[a,b]=[b,a%b]} return a; }",
+    "tests": [
+      {
+        "input": [12, 18],
+        "expected": 6
+      },
+      {
+        "input": [0, 5],
+        "expected": 5
+      },
+      {
+        "input": [7, 13],
+        "expected": 1
+      }
+    ],
+    "hint": "Use the Euclidean algorithm.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Greatest common divisor\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-010",
+    "category": "Numbers",
+    "title": "Fibonacci cache value",
+    "prompt": "Return Fibonacci(n), starting F(0)=0, F(1)=1.",
+    "solution": "function solve(input) { let a=0,b=1; for(let i=0;i<input;i++)[a,b]=[b,a+b]; return a; }",
+    "tests": [
+      {
+        "input": 0,
+        "expected": 0
+      },
+      {
+        "input": 1,
+        "expected": 1
+      },
+      {
+        "input": 10,
+        "expected": 55
+      }
+    ],
+    "hint": "Keep the previous two values.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Fibonacci cache value\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-011",
+    "category": "Strings",
+    "title": "Normalize a username",
+    "prompt": "Trim surrounding whitespace and lowercase the string.",
+    "solution": "function solve(input) { return input.trim().toLowerCase(); }",
+    "tests": [
+      {
+        "input": "  SaAd ",
+        "expected": "saad"
+      },
+      {
+        "input": "HELLO",
+        "expected": "hello"
+      },
+      {
+        "input": "",
+        "expected": ""
+      }
+    ],
+    "hint": "Use trim before toLowerCase.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Normalize a username\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.toLowerCase();\n}"
+  },
+  {
+    "id": "challenge-012",
+    "category": "Strings",
+    "title": "Reverse a label",
+    "prompt": "Reverse a string by Unicode code points.",
+    "solution": "function solve(input) { return [...input].reverse().join(\"\"); }",
+    "tests": [
+      {
+        "input": "abc",
+        "expected": "cba"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "a😀",
+        "expected": "😀a"
+      }
+    ],
+    "hint": "Spread a string to preserve emoji code points.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Reverse a label\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.split(\"\").reverse().join(\"\");\n}"
+  },
+  {
+    "id": "challenge-013",
+    "category": "Strings",
+    "title": "Palindrome validator",
+    "prompt": "Ignore non-ASCII letters/digits and case, then test palindrome.",
+    "solution": "function solve(input) { const s=input.toLowerCase().replace(/[^a-z0-9]/g,\"\"); return s===[...s].reverse().join(\"\"); }",
+    "tests": [
+      {
+        "input": "A man, a plan, a canal: Panama",
+        "expected": true
+      },
+      {
+        "input": "code",
+        "expected": false
+      },
+      {
+        "input": "",
+        "expected": true
+      }
+    ],
+    "hint": "Normalize before comparing.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Palindrome validator\n// Review and repair this implementation.\nfunction solve(input) {\n  return input===input.split(\"\").reverse().join(\"\");\n}"
+  },
+  {
+    "id": "challenge-014",
+    "category": "Strings",
+    "title": "Count vowels",
+    "prompt": "Count a, e, i, o, u, ignoring case.",
+    "solution": "function solve(input) { return (input.match(/[aeiou]/gi)||[]).length; }",
+    "tests": [
+      {
+        "input": "Education",
+        "expected": 5
+      },
+      {
+        "input": "rhythm",
+        "expected": 0
+      },
+      {
+        "input": "",
+        "expected": 0
+      }
+    ],
+    "hint": "A failed regex match returns null.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Count vowels\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.match(/[aeiou]/g).length;\n}"
+  },
+  {
+    "id": "challenge-015",
+    "category": "Strings",
+    "title": "Article slug",
+    "prompt": "Lowercase, replace runs of non-ASCII-alphanumeric characters with hyphens, trim hyphens.",
+    "solution": "function solve(input) { return input.toLowerCase().replace(/[^a-z0-9]+/g,\"-\").replace(/^-|-$/g,\"\"); }",
+    "tests": [
+      {
+        "input": " Hello World! ",
+        "expected": "hello-world"
+      },
+      {
+        "input": "a___b",
+        "expected": "a-b"
+      },
+      {
+        "input": "!!!",
+        "expected": ""
+      }
+    ],
+    "hint": "Normalize consecutive separators.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Article slug\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-016",
+    "category": "Strings",
+    "title": "Title case heading",
+    "prompt": "Split on whitespace; lowercase words then uppercase their first letter. Trim output.",
+    "solution": "function solve(input) { return input.trim().split(/\\s+/).filter(Boolean).map(w=>w[0].toUpperCase()+w.slice(1).toLowerCase()).join(\" \"); }",
+    "tests": [
+      {
+        "input": "hELLO wORLD",
+        "expected": "Hello World"
+      },
+      {
+        "input": "  a   test ",
+        "expected": "A Test"
+      },
+      {
+        "input": "",
+        "expected": ""
+      }
+    ],
+    "hint": "Filter empty words.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Title case heading\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-017",
+    "category": "Strings",
+    "title": "Truncate preview",
+    "prompt": "Input [text,maxLength]. If too long, return first maxLength characters plus an ellipsis character.",
+    "solution": "function solve(input) { return input[0].length>input[1]?input[0].slice(0,input[1])+\"…\":input[0]; }",
+    "tests": [
+      {
+        "input": ["abcdef", 3],
+        "expected": "abc…"
+      },
+      {
+        "input": ["abc", 3],
+        "expected": "abc"
+      },
+      {
+        "input": ["abc", 0],
+        "expected": "…"
+      }
+    ],
+    "hint": "Only append an ellipsis when truncating.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Truncate preview\n// Review and repair this implementation.\nfunction solve(input) {\n  return input[0].slice(0,input[1])+\"…\";\n}"
+  },
+  {
+    "id": "challenge-018",
+    "category": "Strings",
+    "title": "Word counter",
+    "prompt": "Return number of whitespace-separated words.",
+    "solution": "function solve(input) { return input.trim()?input.trim().split(/\\s+/).length:0; }",
+    "tests": [
+      {
+        "input": "one two",
+        "expected": 2
+      },
+      {
+        "input": " ",
+        "expected": 0
+      },
+      {
+        "input": "a\nb\tc",
+        "expected": 3
+      }
+    ],
+    "hint": "Handle all-whitespace input.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Word counter\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.split(\" \").length;\n}"
+  },
+  {
+    "id": "challenge-019",
+    "category": "Strings",
+    "title": "Mask a reference",
+    "prompt": "Replace every character except the last four with *.",
+    "solution": "function solve(input) { return \"*\".repeat(Math.max(0,input.length-4))+input.slice(-4); }",
+    "tests": [
+      {
+        "input": "12345678",
+        "expected": "****5678"
+      },
+      {
+        "input": "123",
+        "expected": "123"
+      },
+      {
+        "input": "",
+        "expected": ""
+      }
+    ],
+    "hint": "Never pass a negative count to repeat.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Mask a reference\n// Review and repair this implementation.\nfunction solve(input) {\n  return \"*\".repeat(input.length-4)+input.slice(-4);\n}"
+  },
+  {
+    "id": "challenge-020",
+    "category": "Strings",
+    "title": "Anagram review",
+    "prompt": "Input two strings. Ignore case and ASCII spaces. Return whether they are anagrams.",
+    "solution": "function solve(input) { const norm=s=>s.toLowerCase().replace(/ /g,\"\").split(\"\").sort().join(\"\"); return norm(input[0])===norm(input[1]); }",
+    "tests": [
+      {
+        "input": ["Listen", "Silent"],
+        "expected": true
+      },
+      {
+        "input": ["ab", "aa"],
+        "expected": false
+      },
+      {
+        "input": ["a b", "ba"],
+        "expected": true
+      }
+    ],
+    "hint": "Sort normalized characters.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Anagram review\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-021",
+    "category": "Arrays",
+    "title": "Remove duplicate tags",
+    "prompt": "Return unique array values in first-seen order.",
+    "solution": "function solve(input) { return [...new Set(input)]; }",
+    "tests": [
+      {
+        "input": [1, 2, 1],
+        "expected": [1, 2]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": ["a", "a", "b"],
+        "expected": ["a", "b"]
+      }
+    ],
+    "hint": "Set preserves insertion order.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Remove duplicate tags\n// Review and repair this implementation.\nfunction solve(input) {\n  return input;\n}"
+  },
+  {
+    "id": "challenge-022",
+    "category": "Arrays",
+    "title": "Chunk a batch",
+    "prompt": "Input [array,size], size is a positive integer. Return chunks.",
+    "solution": "function solve(input) { const out=[]; for(let i=0;i<input[0].length;i+=input[1])out.push(input[0].slice(i,i+input[1])); return out; }",
+    "tests": [
+      {
+        "input": [[1, 2, 3], 2],
+        "expected": [[1, 2], [3]]
+      },
+      {
+        "input": [[], 2],
+        "expected": []
+      },
+      {
+        "input": [[1, 2], 5],
+        "expected": [[1, 2]]
+      }
+    ],
+    "hint": "Advance by chunk size.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Chunk a batch\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-023",
+    "category": "Arrays",
+    "title": "Flatten one level",
+    "prompt": "Flatten only the first level of nesting.",
+    "solution": "function solve(input) { return input.flat(1); }",
+    "tests": [
+      {
+        "input": [[1, 2], [3]],
+        "expected": [1, 2, 3]
+      },
+      {
+        "input": [1, [2, [3]]],
+        "expected": [1, 2, [3]]
+      },
+      {
+        "input": [],
+        "expected": []
+      }
+    ],
+    "hint": "flat accepts a depth.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Flatten one level\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.flat(Infinity);\n}"
+  },
+  {
+    "id": "challenge-024",
+    "category": "Arrays",
+    "title": "Find common IDs",
+    "prompt": "Input two arrays. Return unique shared values in order of the first.",
+    "solution": "function solve(input) { return [...new Set(input[0])].filter(x=>input[1].includes(x)); }",
+    "tests": [
+      {
+        "input": [
+          [1, 2, 2],
+          [2, 3]
+        ],
+        "expected": [2]
+      },
+      {
+        "input": [[1], [2]],
+        "expected": []
+      },
+      {
+        "input": [[], []],
+        "expected": []
+      }
+    ],
+    "hint": "Deduplicate and filter.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Find common IDs\n// Review and repair this implementation.\nfunction solve(input) {\n  return input[0].filter(x=>input[1].includes(x));\n}"
+  },
+  {
+    "id": "challenge-025",
+    "category": "Arrays",
+    "title": "Missing subscribers",
+    "prompt": "Input [all,subscribed]. Return values in all absent from subscribed, preserving duplicates.",
+    "solution": "function solve(input) { return input[0].filter(x=>!input[1].includes(x)); }",
+    "tests": [
+      {
+        "input": [[1, 2, 3], [2]],
+        "expected": [1, 3]
+      },
+      {
+        "input": [[1, 1], []],
+        "expected": [1, 1]
+      },
+      {
+        "input": [[], [2]],
+        "expected": []
+      }
+    ],
+    "hint": "Use the inverse of includes.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Missing subscribers\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-026",
+    "category": "Arrays",
+    "title": "Rotate a carousel",
+    "prompt": "Input [array,k], k nonnegative. Rotate right by k.",
+    "solution": "function solve(input) { const [a,k]=input;if(!a.length)return []; const n=k%a.length;return n?[...a.slice(-n),...a.slice(0,-n)]:a; }",
+    "tests": [
+      {
+        "input": [[1, 2, 3], 1],
+        "expected": [3, 1, 2]
+      },
+      {
+        "input": [[1, 2], 4],
+        "expected": [1, 2]
+      },
+      {
+        "input": [[], 2],
+        "expected": []
+      },
+      {
+        "input": [[1, 2, 3], 4],
+        "expected": [3, 1, 2]
+      }
+    ],
+    "hint": "Reduce k modulo length.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Rotate a carousel\n// Review and repair this implementation.\nfunction solve(input) {\n  return [...input[0].slice(-input[1]),...input[0].slice(0,-input[1])];\n}"
+  },
+  {
+    "id": "challenge-027",
+    "category": "Arrays",
+    "title": "Compact optional values",
+    "prompt": "Remove falsy values using JavaScript truthiness.",
+    "solution": "function solve(input) { return input.filter(Boolean); }",
+    "tests": [
+      {
+        "input": [0, 1, "", false, null, 2],
+        "expected": [1, 2]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": ["0", 0],
+        "expected": ["0"]
+      }
+    ],
+    "hint": "Boolean is usable as a predicate.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Compact optional values\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-028",
+    "category": "Arrays",
+    "title": "Median salary",
+    "prompt": "Return numeric median; null if empty. Do not rely on lexicographic sort.",
+    "solution": "function solve(input) { if(!input.length)return null; const a=[...input].sort((a,b)=>a-b),m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2; }",
+    "tests": [
+      {
+        "input": [10, 2, 3],
+        "expected": 3
+      },
+      {
+        "input": [1, 4, 2, 3],
+        "expected": 2.5
+      },
+      {
+        "input": [],
+        "expected": null
+      }
+    ],
+    "hint": "Sort numerically before selecting the middle.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Median salary\n// Review and repair this implementation.\nfunction solve(input) {\n  const a=[...input].sort();return a[Math.floor(a.length/2)];\n}"
+  },
+  {
+    "id": "challenge-029",
+    "category": "Arrays",
+    "title": "Running total",
+    "prompt": "Return cumulative sums.",
+    "solution": "function solve(input) { let n=0;return input.map(x=>n+=x); }",
+    "tests": [
+      {
+        "input": [1, 2, 3],
+        "expected": [1, 3, 6]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [-1, 2],
+        "expected": [-1, 1]
+      }
+    ],
+    "hint": "Keep an accumulator.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Running total\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-030",
+    "category": "Arrays",
+    "title": "Second distinct score",
+    "prompt": "Return the second largest distinct number, or null.",
+    "solution": "function solve(input) { const a=[...new Set(input)].sort((a,b)=>b-a);return a.length>1?a[1]:null; }",
+    "tests": [
+      {
+        "input": [3, 3, 2, 1],
+        "expected": 2
+      },
+      {
+        "input": [1],
+        "expected": null
+      },
+      {
+        "input": [],
+        "expected": null
+      }
+    ],
+    "hint": "Deduplicate before sorting.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Second distinct score\n// Review and repair this implementation.\nfunction solve(input) {\n  return [...input].sort((a,b)=>b-a)[1];\n}"
+  },
+  {
+    "id": "challenge-031",
+    "category": "Objects",
+    "title": "Group tickets by status",
+    "prompt": "Input array of {status,id}. Return object status -> array of IDs, preserving order.",
+    "solution": "function solve(input) { const o=Object.create(null);for(const x of input){(o[x.status]??=[]).push(x.id)}return o; }",
+    "tests": [
+      {
+        "input": [
+          {
+            "status": "open",
+            "id": 1
+          },
+          {
+            "status": "open",
+            "id": 2
+          }
+        ],
+        "expected": {
+          "open": [1, 2]
+        }
+      },
+      {
+        "input": [],
+        "expected": {}
+      },
+      {
+        "input": [
+          {
+            "status": "done",
+            "id": 3
+          }
+        ],
+        "expected": {
+          "done": [3]
+        }
+      },
+      {
+        "input": [
+          {
+            "status": "constructor",
+            "id": 1
+          }
+        ],
+        "expected": {
+          "constructor": [1]
+        }
+      }
+    ],
+    "hint": "Initialize each group once.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Group tickets by status\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-032",
+    "category": "Objects",
+    "title": "Count labels",
+    "prompt": "Return an object mapping each string to its frequency. Labels contain letters only.",
+    "solution": "function solve(input) { const o=Object.create(null); for(const x of input)o[x]=(o[x]||0)+1;return o; }",
+    "tests": [
+      {
+        "input": ["a", "b", "a"],
+        "expected": {
+          "a": 2,
+          "b": 1
+        }
+      },
+      {
+        "input": [],
+        "expected": {}
+      },
+      {
+        "input": ["x"],
+        "expected": {
+          "x": 1
+        }
+      },
+      {
+        "input": ["constructor"],
+        "expected": {
+          "constructor": 1
+        }
+      }
+    ],
+    "hint": "Increment the count for each label.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Count labels\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-033",
+    "category": "Objects",
+    "title": "Pick fields",
+    "prompt": "Input [object,keys]. Return only requested own properties that exist.",
+    "solution": "function solve(input) { return Object.fromEntries(input[1].filter(k=>Object.hasOwn(input[0],k)).map(k=>[k,input[0][k]])); }",
+    "tests": [
+      {
+        "input": [
+          {
+            "a": 1,
+            "b": 2
+          },
+          ["a"]
+        ],
+        "expected": {
+          "a": 1
+        }
+      },
+      {
+        "input": [
+          {
+            "a": 1
+          },
+          ["z"]
+        ],
+        "expected": {}
+      },
+      {
+        "input": [
+          {
+            "a": null
+          },
+          ["a"]
+        ],
+        "expected": {
+          "a": null
+        }
+      }
+    ],
+    "hint": "Use Object.hasOwn.",
+    "difficulty": "Intermediate",
+    "kind": "Bug fix",
+    "xp": 40,
+    "starter": "// Pick fields\n// Review and repair this implementation.\nfunction solve(input) {\n  return Object.fromEntries(input[1].filter(k=>input[0][k]).map(k=>[k,input[0][k]]));\n}"
+  },
+  {
+    "id": "challenge-034",
+    "category": "Objects",
+    "title": "Omit private fields",
+    "prompt": "Input [object,keys]. Return object without listed keys.",
+    "solution": "function solve(input) { return Object.fromEntries(Object.entries(input[0]).filter(([k])=>!input[1].includes(k))); }",
+    "tests": [
+      {
+        "input": [
+          {
+            "a": 1,
+            "b": 2
+          },
+          ["b"]
+        ],
+        "expected": {
+          "a": 1
+        }
+      },
+      {
+        "input": [{}, ["a"]],
+        "expected": {}
+      },
+      {
+        "input": [
+          {
+            "x": 0
+          },
+          []
+        ],
+        "expected": {
+          "x": 0
+        }
+      }
+    ],
+    "hint": "Filter entries then reconstruct.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Omit private fields\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-035",
+    "category": "Objects",
+    "title": "Invert a lookup",
+    "prompt": "Swap string values and keys. Values are unique.",
+    "solution": "function solve(input) { return Object.fromEntries(Object.entries(input).map(([k,v])=>[v,k])); }",
+    "tests": [
+      {
+        "input": {
+          "a": "x",
+          "b": "y"
+        },
+        "expected": {
+          "x": "a",
+          "y": "b"
+        }
+      },
+      {
+        "input": {},
+        "expected": {}
+      },
+      {
+        "input": {
+          "id": "name"
+        },
+        "expected": {
+          "name": "id"
+        }
+      }
+    ],
+    "hint": "Map each pair in reverse.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Invert a lookup\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-036",
+    "category": "Objects",
+    "title": "Merge preferences",
+    "prompt": "Input [defaults,overrides]. Shallow merge with overrides winning.",
+    "solution": "function solve(input) { return {...input[0],...input[1]}; }",
+    "tests": [
+      {
+        "input": [
+          {
+            "a": 1
+          },
+          {
+            "a": 2
+          }
+        ],
+        "expected": {
+          "a": 2
+        }
+      },
+      {
+        "input": [
+          {
+            "a": 1
+          },
+          {
+            "b": 2
+          }
+        ],
+        "expected": {
+          "a": 1,
+          "b": 2
+        }
+      },
+      {
+        "input": [{}, {}],
+        "expected": {}
+      }
+    ],
+    "hint": "Spread the overrides last.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Merge preferences\n// Review and repair this implementation.\nfunction solve(input) {\n  return {...input[1],...input[0]};\n}"
+  },
+  {
+    "id": "challenge-037",
+    "category": "Objects",
+    "title": "Index records",
+    "prompt": "Return object mapping record id to the whole record. Last duplicate wins.",
+    "solution": "function solve(input) { return Object.fromEntries(input.map(x=>[x.id,x])); }",
+    "tests": [
+      {
+        "input": [
+          {
+            "id": "a",
+            "n": 1
+          }
+        ],
+        "expected": {
+          "a": {
+            "id": "a",
+            "n": 1
+          }
+        }
+      },
+      {
+        "input": [],
+        "expected": {}
+      },
+      {
+        "input": [
+          {
+            "id": "a",
+            "n": 1
+          },
+          {
+            "id": "a",
+            "n": 2
+          }
+        ],
+        "expected": {
+          "a": {
+            "id": "a",
+            "n": 2
+          }
+        }
+      }
+    ],
+    "hint": "Build entries from the IDs.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Index records\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-038",
+    "category": "Objects",
+    "title": "Read nested setting",
+    "prompt": "Input [object,path] with dot-separated keys. Return null when missing.",
+    "solution": "function solve(input) { let v=input[0];for(const k of input[1].split(\".\")){if(v==null||!Object.hasOwn(v,k))return null;v=v[k]}return v; }",
+    "tests": [
+      {
+        "input": [
+          {
+            "a": {
+              "b": 2
+            }
+          },
+          "a.b"
+        ],
+        "expected": 2
+      },
+      {
+        "input": [{}, "a.b"],
+        "expected": null
+      },
+      {
+        "input": [
+          {
+            "a": false
+          },
+          "a"
+        ],
+        "expected": false
+      }
+    ],
+    "hint": "Missing differs from falsy.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Read nested setting\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-039",
+    "category": "Objects",
+    "title": "Total inventory value",
+    "prompt": "Input records {price,quantity}. Return total price times quantity.",
+    "solution": "function solve(input) { return input.reduce((s,x)=>s+x.price*x.quantity,0); }",
+    "tests": [
+      {
+        "input": [
+          {
+            "price": 5,
+            "quantity": 3
+          }
+        ],
+        "expected": 15
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          {
+            "price": 2,
+            "quantity": 0
+          }
+        ],
+        "expected": 0
+      }
+    ],
+    "hint": "Multiply each pair before summing.",
+    "difficulty": "Intermediate",
+    "kind": "Bug fix",
+    "xp": 40,
+    "starter": "// Total inventory value\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.reduce((s,x)=>s+x.price,0);\n}"
+  },
+  {
+    "id": "challenge-040",
+    "category": "Objects",
+    "title": "Stable record ordering",
+    "prompt": "Sort records by score ascending, preserving ties.",
+    "solution": "function solve(input) { return [...input].sort((a,b)=>a.score-b.score); }",
+    "tests": [
+      {
+        "input": [
+          {
+            "id": 1,
+            "score": 2
+          },
+          {
+            "id": 2,
+            "score": 1
+          }
+        ],
+        "expected": [
+          {
+            "id": 2,
+            "score": 1
+          },
+          {
+            "id": 1,
+            "score": 2
+          }
+        ]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [
+          {
+            "id": 1,
+            "score": 1
+          },
+          {
+            "id": 2,
+            "score": 1
+          }
+        ],
+        "expected": [
+          {
+            "id": 1,
+            "score": 1
+          },
+          {
+            "id": 2,
+            "score": 1
+          }
+        ]
+      }
+    ],
+    "hint": "Modern JavaScript sort is stable.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Stable record ordering\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-041",
+    "category": "Algorithms",
+    "title": "Two sum indices",
+    "prompt": "Input [numbers,target]. Return first pair found scanning rightward, or null.",
+    "solution": "function solve(input) { const seen=new Map();for(let i=0;i<input[0].length;i++){const n=input[0][i],j=seen.get(input[1]-n);if(j!==undefined)return [j,i];if(!seen.has(n))seen.set(n,i)}return null; }",
+    "tests": [
+      {
+        "input": [[2, 7, 11], 9],
+        "expected": [0, 1]
+      },
+      {
+        "input": [[3, 3], 6],
+        "expected": [0, 1]
+      },
+      {
+        "input": [[1, 2], 8],
+        "expected": null
+      }
+    ],
+    "hint": "Remember earlier numbers in a Map.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Two sum indices\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-042",
+    "category": "Algorithms",
+    "title": "Binary search",
+    "prompt": "Input [sortedUniqueNumbers,target]. Return index, or -1.",
+    "solution": "function solve(input) { let l=0,r=input[0].length-1;while(l<=r){const m=(l+r)>>1,v=input[0][m];if(v===input[1])return m;if(v<input[1])l=m+1;else r=m-1}return -1; }",
+    "tests": [
+      {
+        "input": [[1, 3, 5], 3],
+        "expected": 1
+      },
+      {
+        "input": [[], 1],
+        "expected": -1
+      },
+      {
+        "input": [[1], 2],
+        "expected": -1
+      },
+      {
+        "input": [[1, 3, 5], 1],
+        "expected": 0
+      }
+    ],
+    "hint": "Halve the search range.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Binary search\n// Review and repair this implementation.\nfunction solve(input) {\n  return input[0].indexOf(input[1]) || -1;\n}"
+  },
+  {
+    "id": "challenge-043",
+    "category": "Algorithms",
+    "title": "Balanced brackets",
+    "prompt": "Input contains only ()[]{}. Return whether properly balanced.",
+    "solution": "function solve(input) { const s=[],pairs={\")\":\"(\",\"]\":\"[\",\"}\":\"{\"};for(const c of input){if(\"([{ \".trim().includes(c))s.push(c);else if(s.pop()!==pairs[c])return false}return s.length===0; }",
+    "tests": [
+      {
+        "input": "([])",
+        "expected": true
+      },
+      {
+        "input": "([)]",
+        "expected": false
+      },
+      {
+        "input": "(",
+        "expected": false
+      },
+      {
+        "input": "",
+        "expected": true
+      }
+    ],
+    "hint": "Use a stack for opening brackets.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Balanced brackets\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-044",
+    "category": "Algorithms",
+    "title": "Merge sorted feeds",
+    "prompt": "Input two sorted numeric arrays. Return their merged ascending sequence.",
+    "solution": "function solve(input) { return [...input[0],...input[1]].sort((a,b)=>a-b); }",
+    "tests": [
+      {
+        "input": [
+          [1, 3],
+          [2, 4]
+        ],
+        "expected": [1, 2, 3, 4]
+      },
+      {
+        "input": [[], [1]],
+        "expected": [1]
+      },
+      {
+        "input": [[1], [1]],
+        "expected": [1, 1]
+      }
+    ],
+    "hint": "Preserve duplicates.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Merge sorted feeds\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-045",
+    "category": "Algorithms",
+    "title": "Unique character",
+    "prompt": "Return first character occurring exactly once, or null. ASCII input.",
+    "solution": "function solve(input) { return [...input].find(c=>input.indexOf(c)===input.lastIndexOf(c))??null; }",
+    "tests": [
+      {
+        "input": "swiss",
+        "expected": "w"
+      },
+      {
+        "input": "aabb",
+        "expected": null
+      },
+      {
+        "input": "",
+        "expected": null
+      }
+    ],
+    "hint": "Compare first and last occurrence.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Unique character\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-046",
+    "category": "Algorithms",
+    "title": "Longest word",
+    "prompt": "Return the first longest whitespace-separated word; empty string if none.",
+    "solution": "function solve(input) { return input.trim().split(/\\s+/).reduce((a,b)=>b.length>a.length?b:a,\"\"); }",
+    "tests": [
+      {
+        "input": "a wonderful day",
+        "expected": "wonderful"
+      },
+      {
+        "input": "one two",
+        "expected": "one"
+      },
+      {
+        "input": "",
+        "expected": ""
+      }
+    ],
+    "hint": "Only replace on strictly greater length.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Longest word\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-047",
+    "category": "Algorithms",
+    "title": "Run length encoder",
+    "prompt": "Encode consecutive ASCII characters as character then count.",
+    "solution": "function solve(input) { return (input.match(/(.)\\1*/g)||[]).map(x=>x[0]+x.length).join(\"\"); }",
+    "tests": [
+      {
+        "input": "aaabbc",
+        "expected": "a3b2c1"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "aba",
+        "expected": "a1b1a1"
+      }
+    ],
+    "hint": "Group adjacent repeated characters.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Run length encoder\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-048",
+    "category": "Algorithms",
+    "title": "Missing sequence number",
+    "prompt": "Input contains distinct numbers from 0..n with one missing. Return it.",
+    "solution": "function solve(input) { const n=input.length;return n*(n+1)/2-input.reduce((a,b)=>a+b,0); }",
+    "tests": [
+      {
+        "input": [3, 0, 1],
+        "expected": 2
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [0],
+        "expected": 1
+      }
+    ],
+    "hint": "Subtract the observed sum from the expected sum.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Missing sequence number\n// Review and repair this implementation.\nfunction solve(input) {\n  const n=input.length;return n*(n-1)/2-input.reduce((a,b)=>a+b,0);\n}"
+  },
+  {
+    "id": "challenge-049",
+    "category": "Algorithms",
+    "title": "Maximum streak sum",
+    "prompt": "Return maximum contiguous subarray sum; 0 for empty.",
+    "solution": "function solve(input) { if(!input.length)return 0;let cur=input[0],best=cur;for(const x of input.slice(1)){cur=Math.max(x,cur+x);best=Math.max(best,cur)}return best; }",
+    "tests": [
+      {
+        "input": [-2, 1, -3, 4, -1, 2, 1, -5, 4],
+        "expected": 6
+      },
+      {
+        "input": [-3, -1],
+        "expected": -1
+      },
+      {
+        "input": [],
+        "expected": 0
+      }
+    ],
+    "hint": "Kadane’s algorithm tracks best ending here.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Maximum streak sum\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-050",
+    "category": "Algorithms",
+    "title": "Deduplicate adjacent events",
+    "prompt": "Remove only consecutive duplicates.",
+    "solution": "function solve(input) { return input.filter((x,i)=>i===0||x!==input[i-1]); }",
+    "tests": [
+      {
+        "input": [1, 1, 2, 1],
+        "expected": [1, 2, 1]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": ["a", "a"],
+        "expected": ["a"]
+      }
+    ],
+    "hint": "Compare to the preceding element.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Deduplicate adjacent events\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-051",
+    "category": "Validation",
+    "title": "Validate a port",
+    "prompt": "Return true for integer numbers from 1 through 65535.",
+    "solution": "function solve(input) { return Number.isInteger(input)&&input>=1&&input<=65535; }",
+    "tests": [
+      {
+        "input": 80,
+        "expected": true
+      },
+      {
+        "input": 0,
+        "expected": false
+      },
+      {
+        "input": 1.5,
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Validate a port\n// Review and repair this implementation.\nfunction solve(input) {\n  return input>=0&&input<=65535;\n}"
+  },
+  {
+    "id": "challenge-052",
+    "category": "Validation",
+    "title": "Validate percentage",
+    "prompt": "Return true for finite numeric values from 0 to 100.",
+    "solution": "function solve(input) { return typeof input===\"number\"&&Number.isFinite(input)&&input>=0&&input<=100; }",
+    "tests": [
+      {
+        "input": 0,
+        "expected": true
+      },
+      {
+        "input": 101,
+        "expected": false
+      },
+      {
+        "input": "50",
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Validate percentage\n// Review and repair this implementation.\nfunction solve(input) {\n  return input>=0&&input<=100;\n}"
+  },
+  {
+    "id": "challenge-053",
+    "category": "Validation",
+    "title": "Password checklist",
+    "prompt": "Return true if at least 8 characters with uppercase, lowercase and a digit.",
+    "solution": "function solve(input) { return input.length>=8&&/[A-Z]/.test(input)&&/[a-z]/.test(input)&&/[0-9]/.test(input); }",
+    "tests": [
+      {
+        "input": "Study123",
+        "expected": true
+      },
+      {
+        "input": "study123",
+        "expected": false
+      },
+      {
+        "input": "Aa1",
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Password checklist\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-054",
+    "category": "Validation",
+    "title": "Hex color validator",
+    "prompt": "Accept # followed by exactly 3 or 6 hexadecimal digits.",
+    "solution": "function solve(input) { return /^#(?:[0-9a-f]{3}|[0-9a-f]{6})$/i.test(input); }",
+    "tests": [
+      {
+        "input": "#abc",
+        "expected": true
+      },
+      {
+        "input": "#AABBCC",
+        "expected": true
+      },
+      {
+        "input": "abc",
+        "expected": false
+      },
+      {
+        "input": "#12345",
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Hex color validator\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-055",
+    "category": "Validation",
+    "title": "ISO date shape",
+    "prompt": "Return whether input has YYYY-MM-DD shape only; do not validate calendar rules.",
+    "solution": "function solve(input) { return /^\\d{4}-\\d{2}-\\d{2}$/.test(input); }",
+    "tests": [
+      {
+        "input": "2026-01-02",
+        "expected": true
+      },
+      {
+        "input": "2026-1-2",
+        "expected": false
+      },
+      {
+        "input": "x2026-01-02",
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// ISO date shape\n// Review and repair this implementation.\nfunction solve(input) {\n  return /^\\d{4}-\\d{1,2}-\\d{1,2}$/.test(input);\n}"
+  },
+  {
+    "id": "challenge-056",
+    "category": "Validation",
+    "title": "Required form fields",
+    "prompt": "Input object of string values. Return sorted keys whose values are blank after trim.",
+    "solution": "function solve(input) { return Object.keys(input).filter(k=>!input[k].trim()).sort(); }",
+    "tests": [
+      {
+        "input": {
+          "name": "",
+          "email": " x "
+        },
+        "expected": ["name"]
+      },
+      {
+        "input": {},
+        "expected": []
+      },
+      {
+        "input": {
+          "b": " ",
+          "a": ""
+        },
+        "expected": ["a", "b"]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Required form fields\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-057",
+    "category": "Validation",
+    "title": "All unique IDs",
+    "prompt": "Return whether every array value is unique.",
+    "solution": "function solve(input) { return new Set(input).size===input.length; }",
+    "tests": [
+      {
+        "input": [1, 2],
+        "expected": true
+      },
+      {
+        "input": [1, 1],
+        "expected": false
+      },
+      {
+        "input": [],
+        "expected": true
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// All unique IDs\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-058",
+    "category": "Validation",
+    "title": "Sorted ascending",
+    "prompt": "Return whether numeric array is nondecreasing.",
+    "solution": "function solve(input) { return input.every((x,i)=>i===0||x>=input[i-1]); }",
+    "tests": [
+      {
+        "input": [1, 1, 2],
+        "expected": true
+      },
+      {
+        "input": [2, 1],
+        "expected": false
+      },
+      {
+        "input": [],
+        "expected": true
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Sorted ascending\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-059",
+    "category": "Validation",
+    "title": "Safe filename",
+    "prompt": "Allow ASCII letters, digits, underscore, hyphen and dot, but reject empty, . and ...",
+    "solution": "function solve(input) { return /^[a-z0-9_.-]+$/i.test(input)&&input!==\".\"&&input!==\"..\"; }",
+    "tests": [
+      {
+        "input": "notes.md",
+        "expected": true
+      },
+      {
+        "input": "../x",
+        "expected": false
+      },
+      {
+        "input": "",
+        "expected": false
+      },
+      {
+        "input": "..",
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Safe filename\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-060",
+    "category": "Validation",
+    "title": "Even integer",
+    "prompt": "Return true only for even integer numbers.",
+    "solution": "function solve(input) { return Number.isInteger(input)&&input%2===0; }",
+    "tests": [
+      {
+        "input": 2,
+        "expected": true
+      },
+      {
+        "input": 2.5,
+        "expected": false
+      },
+      {
+        "input": "2",
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Code review",
+    "xp": 20,
+    "starter": "// Even integer\n// Review and repair this implementation.\nfunction solve(input) {\n  return input%2===0;\n}"
+  },
+  {
+    "id": "challenge-061",
+    "category": "Data",
+    "title": "Paginate results",
+    "prompt": "Input [array,page,size], page starts at 1, size positive. Return requested slice.",
+    "solution": "function solve(input) { return input[0].slice((input[1]-1)*input[2],input[1]*input[2]); }",
+    "tests": [
+      {
+        "input": [[1, 2, 3, 4], 2, 2],
+        "expected": [3, 4]
+      },
+      {
+        "input": [[1], 3, 2],
+        "expected": []
+      },
+      {
+        "input": [[], 1, 5],
+        "expected": []
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Bug fix",
+    "xp": 40,
+    "starter": "// Paginate results\n// Review and repair this implementation.\nfunction solve(input) {\n  return input[0].slice(input[1]*input[2],(input[1]+1)*input[2]);\n}"
+  },
+  {
+    "id": "challenge-062",
+    "category": "Data",
+    "title": "Search catalogue",
+    "prompt": "Input [strings,query]. Case-insensitive substring filter.",
+    "solution": "function solve(input) { return input[0].filter(s=>s.toLowerCase().includes(input[1].toLowerCase())); }",
+    "tests": [
+      {
+        "input": [["Apple", "Pear"], "ap"],
+        "expected": ["Apple"]
+      },
+      {
+        "input": [["a"], ""],
+        "expected": ["a"]
+      },
+      {
+        "input": [[], "x"],
+        "expected": []
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Search catalogue\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-063",
+    "category": "Data",
+    "title": "Top scores",
+    "prompt": "Input [numbers,k]. Return k largest values descending.",
+    "solution": "function solve(input) { return [...input[0]].sort((a,b)=>b-a).slice(0,input[1]); }",
+    "tests": [
+      {
+        "input": [[2, 8, 4], 2],
+        "expected": [8, 4]
+      },
+      {
+        "input": [[1], 0],
+        "expected": []
+      },
+      {
+        "input": [[], 2],
+        "expected": []
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Top scores\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-064",
+    "category": "Data",
+    "title": "Partition passing grades",
+    "prompt": "Return [passing,failing] with pass >= 50. Preserve order.",
+    "solution": "function solve(input) { return [input.filter(x=>x>=50),input.filter(x=>x<50)]; }",
+    "tests": [
+      {
+        "input": [49, 50, 80],
+        "expected": [[50, 80], [49]]
+      },
+      {
+        "input": [],
+        "expected": [[], []]
+      },
+      {
+        "input": [0],
+        "expected": [[], [0]]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Partition passing grades\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-065",
+    "category": "Data",
+    "title": "Zip labels and values",
+    "prompt": "Input two arrays. Return pairs up to the shorter length.",
+    "solution": "function solve(input) { return input[0].slice(0,input[1].length).map((x,i)=>[x,input[1][i]]); }",
+    "tests": [
+      {
+        "input": [
+          ["a", "b"],
+          [1, 2]
+        ],
+        "expected": [
+          ["a", 1],
+          ["b", 2]
+        ]
+      },
+      {
+        "input": [[1], []],
+        "expected": []
+      },
+      {
+        "input": [[1, 2], [3]],
+        "expected": [[1, 3]]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Zip labels and values\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-066",
+    "category": "Data",
+    "title": "Transpose a table",
+    "prompt": "Transpose a rectangular matrix; empty matrix returns [].",
+    "solution": "function solve(input) { return input.length?input[0].map((_,i)=>input.map(row=>row[i])):[]; }",
+    "tests": [
+      {
+        "input": [
+          [1, 2],
+          [3, 4]
+        ],
+        "expected": [
+          [1, 3],
+          [2, 4]
+        ]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [[1, 2]],
+        "expected": [[1], [2]]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Transpose a table\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-067",
+    "category": "Data",
+    "title": "Remove empty fields",
+    "prompt": "Remove properties with null or empty string values; preserve 0 and false.",
+    "solution": "function solve(input) { return Object.fromEntries(Object.entries(input).filter(([,v])=>v!==null&&v!==\"\")); }",
+    "tests": [
+      {
+        "input": {
+          "a": null,
+          "b": 0,
+          "c": false
+        },
+        "expected": {
+          "b": 0,
+          "c": false
+        }
+      },
+      {
+        "input": {},
+        "expected": {}
+      },
+      {
+        "input": {
+          "x": ""
+        },
+        "expected": {}
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Bug fix",
+    "xp": 40,
+    "starter": "// Remove empty fields\n// Review and repair this implementation.\nfunction solve(input) {\n  return Object.fromEntries(Object.entries(input).filter(([,v])=>v));\n}"
+  },
+  {
+    "id": "challenge-068",
+    "category": "Data",
+    "title": "Extract unique domains",
+    "prompt": "Input email strings with one @. Return sorted unique lowercase domains.",
+    "solution": "function solve(input) { return [...new Set(input.map(x=>x.split(\"@\")[1].toLowerCase()))].sort(); }",
+    "tests": [
+      {
+        "input": ["a@X.com", "b@x.com"],
+        "expected": ["x.com"]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": ["x@b.io", "y@a.io"],
+        "expected": ["a.io", "b.io"]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Extract unique domains\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-069",
+    "category": "Data",
+    "title": "Flatten key-value pairs",
+    "prompt": "Input array of [key,value]. Return object; last duplicate wins.",
+    "solution": "function solve(input) { return Object.fromEntries(input); }",
+    "tests": [
+      {
+        "input": [
+          ["a", 1],
+          ["a", 2]
+        ],
+        "expected": {
+          "a": 2
+        }
+      },
+      {
+        "input": [],
+        "expected": {}
+      },
+      {
+        "input": [["x", false]],
+        "expected": {
+          "x": false
+        }
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Flatten key-value pairs\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-070",
+    "category": "Data",
+    "title": "Count completed tasks",
+    "prompt": "Count records with done strictly true.",
+    "solution": "function solve(input) { return input.filter(x=>x.done===true).length; }",
+    "tests": [
+      {
+        "input": [
+          {
+            "done": true
+          },
+          {
+            "done": false
+          }
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [
+          {
+            "done": 1
+          }
+        ],
+        "expected": 0
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Count completed tasks\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.filter(x=>x.done).length;\n}"
+  },
+  {
+    "id": "challenge-071",
+    "category": "Math",
+    "title": "Convert Celsius",
+    "prompt": "Convert Celsius to Fahrenheit.",
+    "solution": "function solve(input) { return input*9/5+32; }",
+    "tests": [
+      {
+        "input": 0,
+        "expected": 32
+      },
+      {
+        "input": 100,
+        "expected": 212
+      },
+      {
+        "input": -40,
+        "expected": -40
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Convert Celsius\n// Review and repair this implementation.\nfunction solve(input) {\n  return input+32;\n}"
+  },
+  {
+    "id": "challenge-072",
+    "category": "Math",
+    "title": "Rectangle area",
+    "prompt": "Input [width,height]. Return area.",
+    "solution": "function solve(input) { return input[0]*input[1]; }",
+    "tests": [
+      {
+        "input": [3, 4],
+        "expected": 12
+      },
+      {
+        "input": [0, 2],
+        "expected": 0
+      },
+      {
+        "input": [2.5, 2],
+        "expected": 5
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Rectangle area\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-073",
+    "category": "Math",
+    "title": "Distance between points",
+    "prompt": "Input [[x1,y1],[x2,y2]]. Return Euclidean distance.",
+    "solution": "function solve(input) { return Math.hypot(input[1][0]-input[0][0],input[1][1]-input[0][1]); }",
+    "tests": [
+      {
+        "input": [
+          [0, 0],
+          [3, 4]
+        ],
+        "expected": 5
+      },
+      {
+        "input": [
+          [1, 1],
+          [1, 1]
+        ],
+        "expected": 0
+      },
+      {
+        "input": [
+          [0, 0],
+          [0, 2]
+        ],
+        "expected": 2
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Distance between points\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-074",
+    "category": "Math",
+    "title": "Least common multiple",
+    "prompt": "Input two positive integers. Return LCM.",
+    "solution": "function solve(input) { let [a,b]=input;while(b)[a,b]=[b,a%b];return input[0]*input[1]/a; }",
+    "tests": [
+      {
+        "input": [4, 6],
+        "expected": 12
+      },
+      {
+        "input": [3, 7],
+        "expected": 21
+      },
+      {
+        "input": [5, 5],
+        "expected": 5
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Least common multiple\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-075",
+    "category": "Math",
+    "title": "Digit sum",
+    "prompt": "Return sum of decimal digits of an integer, ignoring sign.",
+    "solution": "function solve(input) { return String(Math.abs(input)).split(\"\").reduce((s,c)=>s+Number(c),0); }",
+    "tests": [
+      {
+        "input": 123,
+        "expected": 6
+      },
+      {
+        "input": -42,
+        "expected": 6
+      },
+      {
+        "input": 0,
+        "expected": 0
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Digit sum\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-076",
+    "category": "Math",
+    "title": "Decimal to binary",
+    "prompt": "Convert nonnegative integer to binary string.",
+    "solution": "function solve(input) { return input.toString(2); }",
+    "tests": [
+      {
+        "input": 0,
+        "expected": "0"
+      },
+      {
+        "input": 10,
+        "expected": "1010"
+      },
+      {
+        "input": 255,
+        "expected": "11111111"
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Decimal to binary\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-077",
+    "category": "Math",
+    "title": "Binary to decimal",
+    "prompt": "Convert a nonempty valid binary string to a number.",
+    "solution": "function solve(input) { return parseInt(input,2); }",
+    "tests": [
+      {
+        "input": "0",
+        "expected": 0
+      },
+      {
+        "input": "1010",
+        "expected": 10
+      },
+      {
+        "input": "111",
+        "expected": 7
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Binary to decimal\n// Review and repair this implementation.\nfunction solve(input) {\n  return parseInt(input);\n}"
+  },
+  {
+    "id": "challenge-078",
+    "category": "Math",
+    "title": "Round to precision",
+    "prompt": "Input [number,decimalPlaces]. Round using Math.round and a power of ten.",
+    "solution": "function solve(input) { const p=10**input[1];return Math.round(input[0]*p)/p; }",
+    "tests": [
+      {
+        "input": [1.234, 2],
+        "expected": 1.23
+      },
+      {
+        "input": [12.7, 0],
+        "expected": 13
+      },
+      {
+        "input": [-1.234, 2],
+        "expected": -1.23
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Round to precision\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-079",
+    "category": "Math",
+    "title": "Multiplication table",
+    "prompt": "Return first ten positive multiples of integer input.",
+    "solution": "function solve(input) { return Array.from({length:10},(_,i)=>input*(i+1)); }",
+    "tests": [
+      {
+        "input": 2,
+        "expected": [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+      },
+      {
+        "input": 0,
+        "expected": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      },
+      {
+        "input": 1,
+        "expected": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Bug fix",
+    "xp": 20,
+    "starter": "// Multiplication table\n// Review and repair this implementation.\nfunction solve(input) {\n  return Array.from({length:10},(_,i)=>input*i);\n}"
+  },
+  {
+    "id": "challenge-080",
+    "category": "Math",
+    "title": "Sum inclusive range",
+    "prompt": "Input [start,end] integers, start <= end. Return sum inclusive.",
+    "solution": "function solve(input) { return (input[0]+input[1])*(input[1]-input[0]+1)/2; }",
+    "tests": [
+      {
+        "input": [1, 5],
+        "expected": 15
+      },
+      {
+        "input": [-2, 2],
+        "expected": 0
+      },
+      {
+        "input": [3, 3],
+        "expected": 3
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Beginner",
+    "kind": "Feature",
+    "xp": 20,
+    "starter": "// Sum inclusive range\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-081",
+    "category": "Text processing",
+    "title": "Escape HTML text",
+    "prompt": "Replace &, <, >, double quote, single quote with HTML entities.",
+    "solution": "function solve(input) { return input.replace(/[&<>\"']/g,c=>({\"&\":\"&amp;\",\"<\":\"&lt;\",\">\":\"&gt;\",\"\\\"\":\"&quot;\",\"'\":\"&#39;\"})[c]); }",
+    "tests": [
+      {
+        "input": "<b>&",
+        "expected": "&lt;b&gt;&amp;"
+      },
+      {
+        "input": "hello",
+        "expected": "hello"
+      },
+      {
+        "input": "",
+        "expected": ""
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Escape HTML text\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-082",
+    "category": "Text processing",
+    "title": "Camel case to snake case",
+    "prompt": "Insert underscore before each uppercase ASCII letter and lowercase it.",
+    "solution": "function solve(input) { return input.replace(/[A-Z]/g,c=>\"_\"+c.toLowerCase()); }",
+    "tests": [
+      {
+        "input": "firstName",
+        "expected": "first_name"
+      },
+      {
+        "input": "abc",
+        "expected": "abc"
+      },
+      {
+        "input": "myURL",
+        "expected": "my_u_r_l"
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Camel case to snake case\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-083",
+    "category": "Text processing",
+    "title": "Snake case to camel case",
+    "prompt": "Replace underscore followed by lowercase letter with uppercase letter.",
+    "solution": "function solve(input) { return input.replace(/_([a-z])/g,(_,c)=>c.toUpperCase()); }",
+    "tests": [
+      {
+        "input": "first_name",
+        "expected": "firstName"
+      },
+      {
+        "input": "abc",
+        "expected": "abc"
+      },
+      {
+        "input": "a_b_c",
+        "expected": "aBC"
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Snake case to camel case\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-084",
+    "category": "Text processing",
+    "title": "Initials badge",
+    "prompt": "Return uppercase first letters of whitespace separated words.",
+    "solution": "function solve(input) { return input.trim().split(/\\s+/).filter(Boolean).map(x=>x[0].toUpperCase()).join(\"\"); }",
+    "tests": [
+      {
+        "input": "Ada Lovelace",
+        "expected": "AL"
+      },
+      {
+        "input": " saad ",
+        "expected": "S"
+      },
+      {
+        "input": "",
+        "expected": ""
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Initials badge\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-085",
+    "category": "Text processing",
+    "title": "Normalize line endings",
+    "prompt": "Convert CRLF and CR line endings to LF.",
+    "solution": "function solve(input) { return input.replace(/\\r\\n?/g,\"\\n\"); }",
+    "tests": [
+      {
+        "input": "a\r\nb\rc",
+        "expected": "a\nb\nc"
+      },
+      {
+        "input": "x\ny",
+        "expected": "x\ny"
+      },
+      {
+        "input": "",
+        "expected": ""
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Normalize line endings\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-086",
+    "category": "Text processing",
+    "title": "Count lines",
+    "prompt": "Return number of LF-separated lines; empty string is 0.",
+    "solution": "function solve(input) { return input===\"\"?0:input.split(\"\\n\").length; }",
+    "tests": [
+      {
+        "input": "a\nb",
+        "expected": 2
+      },
+      {
+        "input": "",
+        "expected": 0
+      },
+      {
+        "input": "a\n",
+        "expected": 2
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Count lines\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.split(\"\\n\").length;\n}"
+  },
+  {
+    "id": "challenge-087",
+    "category": "Text processing",
+    "title": "Find all match positions",
+    "prompt": "Input [text,nonemptySubstring]. Return all starting indices including overlaps.",
+    "solution": "function solve(input) { const out=[];let i=input[0].indexOf(input[1]);while(i!==-1){out.push(i);i=input[0].indexOf(input[1],i+1)}return out; }",
+    "tests": [
+      {
+        "input": ["aaaa", "aa"],
+        "expected": [0, 1, 2]
+      },
+      {
+        "input": ["abc", "x"],
+        "expected": []
+      },
+      {
+        "input": ["abc", "a"],
+        "expected": [0]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Find all match positions\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-088",
+    "category": "Text processing",
+    "title": "Remove duplicate lines",
+    "prompt": "Return first-seen unique LF-separated lines, joined with LF.",
+    "solution": "function solve(input) { return [...new Set(input.split(\"\\n\"))].join(\"\\n\"); }",
+    "tests": [
+      {
+        "input": "a\nb\na",
+        "expected": "a\nb"
+      },
+      {
+        "input": "",
+        "expected": ""
+      },
+      {
+        "input": "a\na",
+        "expected": "a"
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Remove duplicate lines\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-089",
+    "category": "Text processing",
+    "title": "Character frequency",
+    "prompt": "Return count of each ASCII character including spaces.",
+    "solution": "function solve(input) { const out={};for(const c of input)out[c]=(out[c]||0)+1;return out; }",
+    "tests": [
+      {
+        "input": "aba",
+        "expected": {
+          "a": 2,
+          "b": 1
+        }
+      },
+      {
+        "input": "",
+        "expected": {}
+      },
+      {
+        "input": "a a",
+        "expected": {
+          "a": 2,
+          " ": 1
+        }
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Character frequency\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-090",
+    "category": "Text processing",
+    "title": "Longest common prefix",
+    "prompt": "Return longest shared prefix of all strings, or empty string.",
+    "solution": "function solve(input) { if(!input.length)return \"\";let p=input[0];for(const s of input)while(!s.startsWith(p))p=p.slice(0,-1);return p; }",
+    "tests": [
+      {
+        "input": ["flower", "flow", "flight"],
+        "expected": "fl"
+      },
+      {
+        "input": [],
+        "expected": ""
+      },
+      {
+        "input": ["dog", "cat"],
+        "expected": ""
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Longest common prefix\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-091",
+    "category": "Real tickets",
+    "title": "Repair shipping fee",
+    "prompt": "Input cart total. Shipping is 0 at 500 or above, otherwise 30.",
+    "solution": "function solve(input) { return input>=500?0:30; }",
+    "tests": [
+      {
+        "input": 499,
+        "expected": 30
+      },
+      {
+        "input": 500,
+        "expected": 0
+      },
+      {
+        "input": 1000,
+        "expected": 0
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Bug fix",
+    "xp": 40,
+    "starter": "// Repair shipping fee\n// Review and repair this implementation.\nfunction solve(input) {\n  return input>500?0:30;\n}"
+  },
+  {
+    "id": "challenge-092",
+    "category": "Real tickets",
+    "title": "Fix stock availability",
+    "prompt": "Input {stock,requested}. Return true when positive requested quantity <= stock.",
+    "solution": "function solve(input) { return input.requested>0&&input.requested<=input.stock; }",
+    "tests": [
+      {
+        "input": {
+          "stock": 3,
+          "requested": 3
+        },
+        "expected": true
+      },
+      {
+        "input": {
+          "stock": 3,
+          "requested": 4
+        },
+        "expected": false
+      },
+      {
+        "input": {
+          "stock": 3,
+          "requested": 0
+        },
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Fix stock availability\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.requested<input.stock;\n}"
+  },
+  {
+    "id": "challenge-093",
+    "category": "Real tickets",
+    "title": "Normalize API errors",
+    "prompt": "Input {message?,error?}. Return nonempty message, otherwise error, otherwise Unknown error.",
+    "solution": "function solve(input) { return input.message||input.error||\"Unknown error\"; }",
+    "tests": [
+      {
+        "input": {
+          "message": "Oops"
+        },
+        "expected": "Oops"
+      },
+      {
+        "input": {
+          "error": "Fail"
+        },
+        "expected": "Fail"
+      },
+      {
+        "input": {},
+        "expected": "Unknown error"
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Normalize API errors\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-094",
+    "category": "Real tickets",
+    "title": "Review role access",
+    "prompt": "Input {role,owner}. Allow admin or owner strictly true.",
+    "solution": "function solve(input) { return input.role===\"admin\"||input.owner===true; }",
+    "tests": [
+      {
+        "input": {
+          "role": "admin",
+          "owner": false
+        },
+        "expected": true
+      },
+      {
+        "input": {
+          "role": "user",
+          "owner": true
+        },
+        "expected": true
+      },
+      {
+        "input": {
+          "role": "user",
+          "owner": false
+        },
+        "expected": false
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Review role access\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.role===\"admin\"&&input.owner===true;\n}"
+  },
+  {
+    "id": "challenge-095",
+    "category": "Real tickets",
+    "title": "Fix cart quantity update",
+    "prompt": "Input [items,id,quantity]. Update quantity for matching id, preserve other records.",
+    "solution": "function solve(input) { return input[0].map(x=>x.id===input[1]?{...x,quantity:input[2]}:x); }",
+    "tests": [
+      {
+        "input": [
+          [
+            {
+              "id": 1,
+              "quantity": 2
+            }
+          ],
+          1,
+          5
+        ],
+        "expected": [
+          {
+            "id": 1,
+            "quantity": 5
+          }
+        ]
+      },
+      {
+        "input": [[], 1, 2],
+        "expected": []
+      },
+      {
+        "input": [
+          [
+            {
+              "id": 2,
+              "quantity": 1
+            }
+          ],
+          1,
+          9
+        ],
+        "expected": [
+          {
+            "id": 2,
+            "quantity": 1
+          }
+        ]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Fix cart quantity update\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-096",
+    "category": "Real tickets",
+    "title": "Deduplicate webhook events",
+    "prompt": "Input records with id. Keep first record for each id.",
+    "solution": "function solve(input) { const seen=new Set();return input.filter(x=>{if(seen.has(x.id))return false;seen.add(x.id);return true}); }",
+    "tests": [
+      {
+        "input": [
+          {
+            "id": 1,
+            "n": 1
+          },
+          {
+            "id": 1,
+            "n": 2
+          }
+        ],
+        "expected": [
+          {
+            "id": 1,
+            "n": 1
+          }
+        ]
+      },
+      {
+        "input": [],
+        "expected": []
+      },
+      {
+        "input": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
+        ],
+        "expected": [
+          {
+            "id": 1
+          },
+          {
+            "id": 2
+          }
+        ]
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Deduplicate webhook events\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  },
+  {
+    "id": "challenge-097",
+    "category": "Real tickets",
+    "title": "Calculate retry delay",
+    "prompt": "Input zero-based retry number. Return min(1000 * 2^n, 30000).",
+    "solution": "function solve(input) { return Math.min(1000*2**input,30000); }",
+    "tests": [
+      {
+        "input": 0,
+        "expected": 1000
+      },
+      {
+        "input": 3,
+        "expected": 8000
+      },
+      {
+        "input": 10,
+        "expected": 30000
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Bug fix",
+    "xp": 40,
+    "starter": "// Calculate retry delay\n// Review and repair this implementation.\nfunction solve(input) {\n  return 1000*2**input;\n}"
+  },
+  {
+    "id": "challenge-098",
+    "category": "Real tickets",
+    "title": "Repair unread counter",
+    "prompt": "Count notifications with read strictly false.",
+    "solution": "function solve(input) { return input.filter(x=>x.read===false).length; }",
+    "tests": [
+      {
+        "input": [
+          {
+            "read": false
+          },
+          {
+            "read": true
+          }
+        ],
+        "expected": 1
+      },
+      {
+        "input": [],
+        "expected": 0
+      },
+      {
+        "input": [{}],
+        "expected": 0
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Code review",
+    "xp": 40,
+    "starter": "// Repair unread counter\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.filter(x=>!x.read).length;\n}"
+  },
+  {
+    "id": "challenge-099",
+    "category": "Real tickets",
+    "title": "Validate enrollment capacity",
+    "prompt": "Input {capacity,enrolled}. Return nonnegative remaining places.",
+    "solution": "function solve(input) { return Math.max(0,input.capacity-input.enrolled); }",
+    "tests": [
+      {
+        "input": {
+          "capacity": 30,
+          "enrolled": 25
+        },
+        "expected": 5
+      },
+      {
+        "input": {
+          "capacity": 10,
+          "enrolled": 12
+        },
+        "expected": 0
+      },
+      {
+        "input": {
+          "capacity": 0,
+          "enrolled": 0
+        },
+        "expected": 0
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Bug fix",
+    "xp": 40,
+    "starter": "// Validate enrollment capacity\n// Review and repair this implementation.\nfunction solve(input) {\n  return input.capacity-input.enrolled;\n}"
+  },
+  {
+    "id": "challenge-100",
+    "category": "Real tickets",
+    "title": "Build grade summary",
+    "prompt": "Input grades. Return {passed,failed,total}, pass threshold 50.",
+    "solution": "function solve(input) { return {passed:input.filter(x=>x>=50).length,failed:input.filter(x=>x<50).length,total:input.length}; }",
+    "tests": [
+      {
+        "input": [40, 50, 90],
+        "expected": {
+          "passed": 2,
+          "failed": 1,
+          "total": 3
+        }
+      },
+      {
+        "input": [],
+        "expected": {
+          "passed": 0,
+          "failed": 0,
+          "total": 0
+        }
+      },
+      {
+        "input": [0],
+        "expected": {
+          "passed": 0,
+          "failed": 1,
+          "total": 1
+        }
+      }
+    ],
+    "hint": "Write the simplest implementation that satisfies the contract, then check the boundary cases.",
+    "difficulty": "Intermediate",
+    "kind": "Feature",
+    "xp": 40,
+    "starter": "// Build grade summary\n// Implement solve(input) to satisfy the ticket.\nfunction solve(input) {\n  return null;\n}"
+  }
+]
