@@ -97,13 +97,19 @@ Clone the [public DevStudy repository](https://github.com/ROBIN90089/devstudy).
 ## Command line
 ![DevStudy command line illustration](docs/cli-cover.png)
 
-After `npm ci`, list challenges, read a brief, or test a local JavaScript solution:
+On Linux or macOS, clone the repository and run the launcher with Node.js 22+:
 
 ```sh
-npm run cli -- list
-npm run cli -- show challenge-001
-npm run cli -- run challenge-001 solution.js
+git clone https://github.com/ROBIN90089/devstudy.git
+cd devstudy
+./devstudy setup
+./devstudy list
+./devstudy show challenge-001
+./devstudy run challenge-001 examples/checkout-total.js
+./devstudy test
 ```
+
+The launcher locates the project even when called by absolute path from another directory. Pass your own solution path relative to your current directory. If you see `ENOENT` for `package.json` when running npm directly, enter the cloned `devstudy` folder first.
 
 ![DevStudy editor and acceptance tests](docs/editor.png)
 

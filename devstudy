@@ -1,0 +1,28 @@
+#!/bin/sh
+set -eu
+caller_dir=$PWD
+project_dir=$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)
+cd "$project_dir"
+if ! command -v node >/dev/null || ! command -v npm >/dev/null; then
+  echo 'DevStudy requires Node.js 22+ and npm.' >&2
+  exit 1
+fi
+if ! node -e 'process.exit(Number(process.versions.node.split(".")[0]) < 22 ? 1 : 0)'; then
+  echo 'DevStudy requires Node.js 22 or later.' >&2
+  exit 1
+fi
+case "${1:-}" in
+  setup) exec npm ci ;;
+  test) exec npm test ;;
+  web) shift; exec npm run dev -- "$@" ;;
+  run)
+    if [ "$#" -eq 3 ]; then
+      case "$3" in
+        /*) ;;
+        *) set -- "$1" "$2" "$caller_dir/$3" ;;
+      esac
+    fi
+    exec npm run --silent cli -- "$@"
+    ;;
+  *) exec npm run --silent cli -- "$@" ;;
+esac
