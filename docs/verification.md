@@ -15,4 +15,4 @@ The browser suite covers failing then successful code execution, progress after 
 
 The sandbox suite additionally checks absent host APIs, fresh runtimes between cases, syntax errors, code-size limits, structural comparison, non-finite results and guest-memory exhaustion.
 
-Browser checks used Chromium. PostgreSQL verification used a disposable local PostgreSQL 18 instance; the included Docker Compose and CI configuration target PostgreSQL 17. Those deployment environments were not run here. No GitHub remote or public deployment has been created.
+Browser checks used Chromium. PostgreSQL verification used a disposable local PostgreSQL 18 instance; the included Docker Compose and CI configuration target PostgreSQL 17. Those deployment environments were not run here. This verification run used a local server.

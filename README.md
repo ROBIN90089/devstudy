@@ -1,5 +1,7 @@
 # DevStudy
 
+![DevStudy cover](docs/cover.png)
+
 A personal learning workspace with **100 JavaScript challenges, 308 acceptance cases and 50 functional study tools**. Practice fixing bugs, implementing features and reviewing code, then track what you have learned.
 
 ![DevStudy dashboard](docs/overview.png)
@@ -90,12 +92,19 @@ Only synchronous JSON-compatible return values are supported. The runner compare
 
 ## GitHub
 
-This directory is a standalone Git repository. Create an empty GitHub repository, then push:
+Clone the [public DevStudy repository](https://github.com/ROBIN90089/devstudy).
+
+## Command line
+
+After `npm ci`, list challenges, read a brief, or test a local JavaScript solution:
 
 ```sh
-git remote add origin https://github.com/YOUR_USERNAME/devstudy.git
-git push -u origin HEAD
+npm run cli -- list
+npm run cli -- show challenge-001
+npm run cli -- run challenge-001 solution.js
 ```
+
+![DevStudy editor and acceptance tests](docs/editor.png)
 
 The included GitHub Actions workflow installs locked dependencies, runs unit tests and type checks, builds production output, and runs browser tests with a PostgreSQL service.
 
