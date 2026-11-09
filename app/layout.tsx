@@ -1,9 +1,23 @@
 import type { Metadata } from "next";
+import { siteUrl } from "../lib/site";
 import "./globals.css";
+
+const title = "DevStudy — JavaScript Coding Challenges and Study Tools";
+const description =
+  "Practice JavaScript with 100 coding challenges, automated tests, and 50 study tools. Solve development tickets and track your progress.";
+
 export const metadata: Metadata = {
-  title: "DevStudy — Build your skills",
-  description:
-    "100 coding challenges and 50 practical study tools. Learn by solving real development tickets.",
+  metadataBase: siteUrl,
+  title,
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: "DevStudy",
+    title,
+    description,
+  },
 };
 export default function RootLayout({
   children,
