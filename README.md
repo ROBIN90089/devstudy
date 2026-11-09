@@ -95,6 +95,7 @@ Only synchronous JSON-compatible return values are supported. The runner compare
 Clone the [public DevStudy repository](https://github.com/ROBIN90089/devstudy).
 
 ## Command line
+![DevStudy command line illustration](docs/cli-cover.png)
 
 After `npm ci`, list challenges, read a brief, or test a local JavaScript solution:
 
