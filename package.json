@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@jitl/quickjs-wasmfile-release-sync": "^0.31.0",
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "^0.468.0",
     "next": "^16.0.0",
     "pg": "^8.16.0",
